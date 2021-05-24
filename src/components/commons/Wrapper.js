@@ -7,7 +7,7 @@ const Container = styled.div`
     background-color: ${theme.palette.primary.main};
     padding: 40px 40px;
     color: #fff;
-    overflow-y: scroll;
+    // overflow-y: scroll;
 
     ::-webkit-scrollbar {
     width: 15px;
@@ -32,12 +32,12 @@ const Container = styled.div`
   `}
 `;
 
-const Container = styled.div`
+const Container2 = styled.div`
   ${({ theme }) => `
-    width: 100vw;
-    height: calc(100vh - 66px);
+    max-width: 100vw;
+    height: calc(100vh - 330px);
     background-color: ${theme.palette.primary.main};
-    padding: 40px 40px;
+    // padding: 40px 40px;
     color: #fff;
     overflow-y: scroll;
 
@@ -57,13 +57,17 @@ const Container = styled.div`
     border-radius: 10px;
   }
 
-    @media(min-width: 960px) {
-      margin-left: 240px;
-      width: calc(100vw - 240px);
-    }
+    // @media(min-width: 960px) {
+    //   margin-left: 240px;
+    //   width: calc(100vw - 240px);
+    // }
   `}
 `;
 
-export default function Wrapper({ children }) {
+export function Wrapper({ children }) {
   return <Container>{children}</Container>;
+}
+
+export function Wrapper2({ children }) {
+  return <Container2>{children}</Container2>;
 }
