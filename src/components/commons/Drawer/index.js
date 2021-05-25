@@ -12,21 +12,18 @@ const StyledDrawer = styled(Drawer)`
     & .MuiDrawer-paper {
       border-right: 2px solid ${theme.palette.common.border};
       width: 240px;
-      background-color: ${theme.palette.secondary.main};
+      background-color: ${theme.palette.drawer.background};
       color: ${theme.palette.primary.contrastText};
-      & .MuiTypography-body1 {
-        // text-transform: uppercase;
-      }
       & .MuiListItemIcon-root {
         color: ${theme.palette.common.gray};
       }
       & .MuiListItem-button {
         &:hover {
-          background-color: ${theme.palette.common.hover};
+          background-color: ${theme.palette.primary.main};
         }
       }
       & .MuiDivider-root {
-        background-color: ${theme.palette.drawer.background};
+        background-color: ${theme.palette.drawer.border};
       }
     }
   `}

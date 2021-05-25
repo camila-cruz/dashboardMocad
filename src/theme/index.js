@@ -23,6 +23,9 @@ const theme = createMuiTheme({
       background: '#252A48',
       border: '#7983b9',
     },
+    dialog: {
+      backdrop: '#7983b98f',
+    },
     drawer: {
       background: '#252A48',
       border: '#7983b9',
@@ -38,9 +41,9 @@ const theme = createMuiTheme({
       main: '#252A48',
     },
   },
-  // action: {
-  //   hover: border,
-  // },
+  text: {
+    primary: '#fff',
+  },
   typography: {
     h1: {
       fontWeight: 700,

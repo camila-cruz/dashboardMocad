@@ -1,20 +1,31 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
 
 import { useTable, usePagination } from 'react-table';
+
+import { useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-
-import makeData from './makeData';
-
-import StyledTable from './styles';
+import Dialog from '../Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
 
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import EditIcon from '@material-ui/icons/Edit';
 
-function Table({ columns, data }) {
+import makeData from './makeData';
+
+import StyledTable from './styles';
+import Title from '../Title';
+
+function Table({ columns, data, handleClickOpen }) {
+  const theme = useTheme();
+
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -57,7 +68,7 @@ function Table({ columns, data }) {
                   {column.render('Header')}
                 </th>
               ))}
-              <th>Actions</th>
+              <th>Ações</th>
             </tr>
           ))}
         </thead>
@@ -79,7 +90,18 @@ function Table({ columns, data }) {
                     </td>
                   );
                 })}
-                <td>Teste</td>
+                <td style={{ width: '150px' }}>
+                  <Grid container justify="space-around">
+                    <IconButton onClick={handleClickOpen}>
+                      <EditIcon style={{ fill: theme.palette.common.white }} />
+                    </IconButton>
+                    <IconButton>
+                      <DeleteForeverIcon
+                        style={{ fill: theme.palette.common.white }}
+                      />
+                    </IconButton>
+                  </Grid>
+                </td>
               </tr>
             );
           })}
@@ -113,6 +135,15 @@ function Table({ columns, data }) {
 }
 
 export default function MuiTable() {
+  const [open, setOpen] = useState(true);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const columns = React.useMemo(
     () => [
       {
@@ -134,8 +165,34 @@ export default function MuiTable() {
   const data = React.useMemo(() => makeData(30), []);
 
   return (
-    <div>
-      <Table columns={columns} data={data} />
-    </div>
+    <>
+      <Table columns={columns} data={data} handleClickOpen={handleClickOpen} />
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          <Grid container justify="center">
+            <Title>Edit</Title>
+          </Grid>
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Let Google help apps determine location. This means sending
+            anonymous location data to Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Disagree
+          </Button>
+          <Button onClick={handleClose} color="primary" autoFocus>
+            Agree
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 }

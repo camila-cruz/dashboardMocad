@@ -8,7 +8,7 @@ const StyledTable = styled.table`
   th {
     border-right: 2px solid #8e95c0;
     color: #fff;
-    padding: 12px 12px;
+    padding: 5px 15px;
   }
 
   th:last-child,
