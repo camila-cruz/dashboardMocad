@@ -11,14 +11,14 @@ const TitleContainer = styled.div`
     &::after {
       content: '';
       display: block;
-      border-bottom: 5px solid ${(props) => props.lineColor};
+      border-bottom: 5px solid ${(props) => props.theme.palette.primary.main};
     }
   }
 `;
 
-export default function Title({ children, lineColor, width }) {
+export default function Title({ children }) {
   return (
-    <TitleContainer lineColor={lineColor} width={width}>
+    <TitleContainer>
       <h1>{children}</h1>
     </TitleContainer>
   );

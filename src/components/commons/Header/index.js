@@ -43,7 +43,7 @@ export default function ButtonAppBar() {
 
   return (
     <>
-      <AppBar elevation={0} position="relative" color="secondary">
+      <AppBar elevation={0} position="relative">
         <Toolbar>
           <Hidden mdUp>
             <IconButton
@@ -66,7 +66,7 @@ export default function ButtonAppBar() {
             </Link>
           </Box>
 
-          <Button color="inherit" style={{ marginLeft: theme.spacing(2) }}>
+          <Button variant="contained" color="primary">
             Login
           </Button>
         </Toolbar>

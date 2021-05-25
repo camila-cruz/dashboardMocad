@@ -4,7 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 
 const StyledAppBar = styled(AppBar)`
   ${({ theme }) => `
-    border-bottom: 2px solid ${theme.palette.common.border};
+    border-bottom: 2px solid ${theme.palette.appbar.border};
+    background-color: ${theme.palette.appbar.background};
   `}
 `;
 

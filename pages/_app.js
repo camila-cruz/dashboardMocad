@@ -7,7 +7,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 import { StylesProvider } from '@material-ui/core/styles';
 import Header from '../src/components/commons/Header';
-// import './styles.css';
 class MyApp extends App {
   componentDidMount() {
     // Remove the server-side injected CSS.

@@ -26,7 +26,7 @@ const StyledDrawer = styled(Drawer)`
         }
       }
       & .MuiDivider-root {
-        background-color: ${theme.palette.common.gray};
+        background-color: ${theme.palette.drawer.background};
       }
     }
   `}

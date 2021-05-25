@@ -15,12 +15,12 @@ export default function Index() {
         alignItems="center"
         style={{ marginBottom: 64 }}
       >
-        <Title lineColor={theme.palette.common.hoverColor}>Dashboard</Title>
+        <Title lineColor={theme.palette.common.hovercolor}>Dashboard</Title>
         <Grid item>
           <Button
             variant="contained"
-            bgColor={theme.palette.common.bgColor}
-            hoverColor={theme.palette.common.hoverColor}
+            bgcolor={theme.palette.common.bgcolor}
+            hovercolor={theme.palette.common.hovercolor}
           >
             Adicionar
           </Button>

@@ -4,8 +4,8 @@ const white = '#fff';
 const black = '#000';
 const gray = '#BFBFBF';
 const hover = 'rgb(100 255 218 / 29%)';
-const bgColor = 'rgb(100 255 218 / 29%)';
-const hoverColor = 'rgb(100 255 218 / 50%)';
+const bgcolor = 'rgb(100 255 218 / 29%)';
+const hovercolor = 'rgb(100 255 218 / 50%)';
 const border = '#7983b9';
 
 const theme = createMuiTheme({
@@ -15,17 +15,32 @@ const theme = createMuiTheme({
       black: black,
       gray: gray,
       hover: hover,
-      bgColor: bgColor,
-      hoverColor: hoverColor,
+      bgcolor: bgcolor,
+      hovercolor: hovercolor,
       border: border,
     },
+    appbar: {
+      background: '#252A48',
+      border: '#7983b9',
+    },
+    drawer: {
+      background: '#252A48',
+      border: '#7983b9',
+    },
+    content: {
+      background: '#1B1F38',
+    },
     primary: {
-      main: '#1B1F38',
+      main: '#44ab91',
+      contrastText: white,
     },
     secondary: {
       main: '#252A48',
     },
   },
+  // action: {
+  //   hover: border,
+  // },
   typography: {
     h1: {
       fontWeight: 700,
