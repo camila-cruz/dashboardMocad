@@ -27,7 +27,7 @@ const Container2 = styled.div`
   `}
 `;
 
-export function Wrapper({ children }) {
+export default function Wrapper({ children }) {
   return <Container>{children}</Container>;
 }
 
